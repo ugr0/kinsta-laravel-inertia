@@ -1,25 +1,27 @@
 <script setup>
 import KinstaLayout from "../Layouts/KinstaLayout.vue";
+
+defineProps({
+  articles: Object,
+});
 </script>
 
 <template>
-  <KinstaLayout>
-    <section>
+    <KinstaLayout>
       <h2>Read our latest articles</h2>
-      <article>
-        <div>
-          <img src="/images/kinsta-logo.png" alt="Article thumbnail" />
-        </div>
 
-        <h3>Title for the blog</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum rem
-          itaque error vel perferendis aliquam numquam dignissimos, expedita
-          perspiciatis consectetur!
-        </p>
+      <section>
+        // Looping over articles
+        <article v-for="article in articles" :key="article.id">
+          <div>
+            <img src="/images/kinsta-logo.png" alt="Article thumbnail" />
+          </div>
 
-        <a href="#">Read more</a>
-      </article>
-    </section>
-  </KinstaLayout>
- </template>
+          <h3>{{article.title}}</h3>
+          <p>{{article.excerpt}}</p>
+
+          <a href="#">Read more</a>
+        </article>
+      </section>
+    </KinstaLayout>
+</template>
