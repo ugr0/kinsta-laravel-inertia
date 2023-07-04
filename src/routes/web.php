@@ -20,3 +20,9 @@ Route::get('/', function () {
         'articles' => Article::latest()->get()
     ]);
 })->name('home');
+
+Route::get('/posts/{article:id}', function (Article $article) {
+    return Inertia::render('Show', [
+        'article' => $article
+    ]);
+})->name('article.show');
