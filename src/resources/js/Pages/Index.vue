@@ -31,7 +31,7 @@ defineProps({
                     <h3
                         class="text-xl font-semibold text-indigo-600 hover:text-indigo-800"
                     >
-                        <Link :href="route('article.show', article.id)">{{
+                        <Link :href="route('article.show', article.id)" preserve-scroll>{{
                             article.title
                         }}</Link>
                     </h3>
@@ -39,7 +39,7 @@ defineProps({
                         {{ article.excerpt }}
                     </p>
                     <Link
-                        :href="route('article.show', article.id)"
+                        :href="route('article.show', article.id)" preserve-scroll
                         class="text-indigo-600 hover:text-indigo-800 w-fit self-end font-semibold"
                         >Read more
                     </Link>
