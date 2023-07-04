@@ -1,16 +1,11 @@
 <script setup>
-  //
+import KinstaLayout from "../Layouts/KinstaLayout.vue";
 </script>
 
 <template>
-  <header>
-    <h1>Kinsta Blog</h1>
-  </header>
-
-  <main>
-    <h2>Read our latest articles</h2>
-
+  <KinstaLayout>
     <section>
+      <h2>Read our latest articles</h2>
       <article>
         <div>
           <img src="/images/kinsta-logo.png" alt="Article thumbnail" />
@@ -26,11 +21,5 @@
         <a href="#">Read more</a>
       </article>
     </section>
-  </main>
-
-  <footer>
-    <h2>Join our Newsletter</h2>
-
-    <input type="email" />
-  </footer>
-</template>
+  </KinstaLayout>
+ </template>
